@@ -2,37 +2,45 @@
 
 <h2>Burgers Yet To Be Eaten</h2>
 
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
 
-<h2>Burgers that have been ate. </h2>
-
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+<div class="column-layout">
+  <div class="center-column">
+     <form class="createForm" action="">
+        <div class="form-row">
+          <label for="name">Burger Name:</label>
+          <input type="text" id="name">
+          <button id="addSubmit" type="submit">Add Burger</button>
+        </div>
+     </form>
   </div>
 
-  <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
+  <div class="sidebar-one">
+    <h3>Uneaten Burgers</h3>
+    <ul>
+         {{#each burgers}}
+           {{#unless this.devoured}}
+             <li>
+                <h5> {{this.id}}.{{this.burger_name}}
+                   <button type="submit" id="eatSubmit"> EAT THIS! </button>
+                </h5>   
+             </li>
+           {{/unless}}
+         {{/each}}   
+    </ul>  
   </div>
 
-  <button type="submit">Add Cat</button>
-</form>
+  <div class="sidebar-two">
+    <h3>Uneaten Burgers</h3>
+    <ul>
+         {{#each burgers}}
+           {{#if  this.devoured}}
+             <li>
+                <h5> {{this.id}}.{{this.burger_name}}
+                   <button type="submit" id="replaceSubmit"> Replace! </button>
+                </h5>   
+             </li>
+           {{/if}}
+         {{/each}}   
+    </ul>  
+  </div>
+
