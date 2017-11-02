@@ -6,10 +6,13 @@ body {
 
 .headerContainer {
   display:flex;
+  flex-direction:column;
 }
 
 .headerContainer h1 {
   margin:auto;
+  margin-top:10px;
+  margin-bottom:15px;
 }
 
 .headerContainer #headerImg {
@@ -27,11 +30,17 @@ body {
   line-height: 1.65;
   padding: 20px 50px;
   display: flex;
+  text-align:center;
+}
+
+.column-layout h3 {
+  margin:auto;
+  vertical-align:middle;
 }
 
 .center-column {
   background-color: #cdf1c3;
-  margin:2px;
+  margin:5px;
   padding:3px;
   border:3px solid black;
   flex: 1;
@@ -41,7 +50,7 @@ body {
 .sidebar-one {
   background-color: #cdf1c3;
   padding:3px;
-  margin:2px;
+  margin:5px;
   border:3px solid black;
   flex: 1;
   order: 1;
@@ -50,7 +59,7 @@ body {
 .sidebar-two {
   background-color: #cdf1c3;
   padding:3px;
-  margin:2px;
+  margin:5px;
   border:3px solid black;
   flex: 1;
   order: 3;

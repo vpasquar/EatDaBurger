@@ -10,6 +10,7 @@
 <div class="column-layout">
   <div class="center-column">
      <h3> Add a Burger ! </h3>
+     <br>
      <form class="createForm" action="">
         <div class="form-row">
           <label for="name">Burger Name:</label>
@@ -20,7 +21,7 @@
   </div>
 
   <div class="sidebar-one">
-    <h3>Uneaten Burgers</h3>
+    <h3>Ready to Eat!</h3>
     <ul>
          {{#each burgers}}
            {{#unless this.devoured}}
@@ -35,7 +36,7 @@
   </div>
 
   <div class="sidebar-two">
-    <h3>Uneaten Burgers</h3>
+    <h3>Burgers Already Ate <h3>
     <ul>
          {{#each burgers}}
            {{#if  this.devoured}}
