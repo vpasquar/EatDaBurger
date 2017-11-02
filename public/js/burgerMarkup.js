@@ -1,7 +1,7 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
 
-  $("#eatSubmit").on("click", function(event) {
+  $(".eatSubmit").on("click", function(event) {
     var id = $(this).data("id");
 
     var newEatState = {
@@ -21,7 +21,7 @@ $(function() {
     );
   });
    
-    $("#replaceSubmit").on("click", function(event) {
+    $(".replaceSubmit").on("click", function(event) {
     var id = $(this).data("id");
 
     var newEatState = {
@@ -31,7 +31,7 @@ $(function() {
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: newSleepState
+      data: newEatState
     }).then(
       function() {
         console.log("changed burger status to replaced");

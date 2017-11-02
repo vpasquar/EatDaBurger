@@ -27,7 +27,7 @@
            {{#unless this.devoured}}
              <li>
                 <h5> {{this.id}}.{{this.burger_name}}
-                   <button type="submit" id="eatSubmit"> EAT THIS! </button>
+                   <button type="submit" data-id="{{this.id}}"class="eatSubmit"> EAT THIS! </button>
                 </h5>   
              </li>
            {{/unless}}
@@ -42,7 +42,7 @@
            {{#if  this.devoured}}
              <li>
                 <h5> {{this.id}}.{{this.burger_name}}
-                   <button type="submit" id="replaceSubmit"> Replace! </button>
+                   <button type="submit" data-id="{{this.id}}" class="replaceSubmit"> Replace! </button>
                 </h5>   
              </li>
            {{/if}}
